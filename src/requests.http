@@ -1,0 +1,126 @@
+POST http://localhost:1337/api/auth/local/register
+content-type: application/json
+
+{
+        "username": "Arnaud1",
+        "email": "arnaud.laforgue@gmail.com",
+        "password": "aaaaaaaa"
+}
+
+###
+
+POST http://localhost:1337/api/auth/local
+content-type: application/json
+
+{
+    "identifier": "arnaud.laforgue@gmail.com",
+    "password": "654321"
+}
+
+###
+
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+
+###
+
+POST http://localhost:1337/api/auth/change-password
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+
+{
+    "currentPassword": "123456",
+    "password": "654321",
+    "passwordConfirmation": "654321"
+}
+
+###
+
+POST http://localhost:1337/api/free-games
+content-type: application/json
+
+{
+    "data": {
+    "nom": "candy crush saga",
+    "description": "Candy Crush Saga est un jeu vidéo développé par King, disponible à l'origine comme une application Facebook et adapté pour les systèmes d'exploitation Android, iOS et Windows Phone. Il s'agit d'une variante du jeu sur navigateur web Candy Crush. Il reprend les principes du jeu concurrent Bejeweled, sorti en 2001 sous le nom initial de Diamond Mine2, et en partie le design de CandySwype, sorti en 20103. Candy Crush Saga est préinstallé sur les appareils dotés de base de Windows 10, au même titre que Solitaire, Démineur et Dame de Pique",
+    "image": "https://fr.wikipedia.org/wiki/Fichier:Candy_Crush_Saga_Logo.jpg"
+}
+}
+###
+POST http://localhost:1337/api/free-games
+content-type: application/json
+
+{
+    "data": {
+    "nom": "elvenar",
+    "description": "Bienvenue sur Elvenar ! Elvenar est un jeu gratuit. Dans Elvenar, vous construirez une ville florissante et vous découvrirez un monde magique rempli de mystères. Construisez la plus belle ville qui soit et établissez le système économique le plus efficace de tous les temps ! Dans Elvenar, vous pouvez améliorer presque tous vos bâtiments et ainsi profiter d'une meilleure productivité tout en embellissant votre ville. Explorez la vaste carte du monde pour vous emparer des connaissances de vos ancêtres et découvrir de nouvelles technologies. Accumulez les reliques en vous livrant au commerce ou en livrant bataille, et améliorez votre production. Vous pouvez faire votre choix : devenir un marchand connu et reconnu et peaufiner votre maîtrise des arts de la production de marchandises, ou mener vos troupes vers la victoire dans des batailles en 3D. Tout dépend de vous. Elvenar est un jeu en perpétuel développement, de nouvelles fonctionnalités sont ajoutées régulièrement au jeu en se basant sur les retours et les suggestions des communautés ! N'attendez plus pour venir découvrir notre univers !",
+    "image": "https://fr.wiki.elvenar.com/images/f/f5/Content-onyx-houses.0c8e6ced.png"
+}
+}
+###
+GET http://localhost:1337/api/free-games
+###
+GET http://localhost:1337/api/free-games/2
+###
+PUT http://localhost:1337/api/free-games/1
+content-type: application/json
+
+{
+    "data": {
+    "nom": "candy crush saga",
+    "description": "Candy Crush Saga est un jeu vidéo développé par King, disponible à l'origine comme une application Facebook et adapté pour les systèmes d'exploitation Android, iOS et Windows Phone. Il s'agit d'une variante du jeu sur navigateur web Candy Crush. Il reprend les principes du jeu concurrent Bejeweled, sorti en 2001 sous le nom initial de Diamond Mine2, et en partie le design de CandySwype, sorti en 20103.",
+    "image": "https://fr.wikipedia.org/wiki/Fichier:Candy_Crush_Saga_Logo.jpg"
+}
+}
+###
+DELETE http://localhost:1337/api/free-games/1
+###
+POST http://localhost:1337/api/official-games
+content-type: application/json
+Authorization: Bearer 7a374ae074b0bcbc7547749c6094e0f13110587ee207e7972748a85e320855fce5a4a99ea0ab9ee885d0af9006300d0219be8c6220d7c7a19cb4a6e6bd309514d17a6c0806f7b88e38469b9e9b799a53aeb94302038b5802c75a66a6dbd5778d7decef742129332669ffe7addf7e4184acddfffb5dea722f6a7e80367d363b6f
+
+{
+    "data": {
+    "nom": "candy crush saga",
+    "description": "Candy Crush Saga est un jeu vidéo développé par King, disponible à l'origine comme une application Facebook et adapté pour les systèmes d'exploitation Android, iOS et Windows Phone. Il s'agit d'une variante du jeu sur navigateur web Candy Crush. Il reprend les principes du jeu concurrent Bejeweled, sorti en 2001 sous le nom initial de Diamond Mine2, et en partie le design de CandySwype, sorti en 20103. Candy Crush Saga est préinstallé sur les appareils dotés de base de Windows 10, au même titre que Solitaire, Démineur et Dame de Pique",
+    "image": "https://fr.wikipedia.org/wiki/Fichier:Candy_Crush_Saga_Logo.jpg",
+    "prix": "30€"
+}
+}
+###
+POST http://localhost:1337/api/official-games
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+
+{
+    "data": {
+    "nom": "elvenar",
+    "description": "Bienvenue sur Elvenar ! Elvenar est un jeu gratuit. Dans Elvenar, vous construirez une ville florissante et vous découvrirez un monde magique rempli de mystères. Construisez la plus belle ville qui soit et établissez le système économique le plus efficace de tous les temps ! Dans Elvenar, vous pouvez améliorer presque tous vos bâtiments et ainsi profiter d'une meilleure productivité tout en embellissant votre ville. Explorez la vaste carte du monde pour vous emparer des connaissances de vos ancêtres et découvrir de nouvelles technologies. Accumulez les reliques en vous livrant au commerce ou en livrant bataille, et améliorez votre production. Vous pouvez faire votre choix : devenir un marchand connu et reconnu et peaufiner votre maîtrise des arts de la production de marchandises, ou mener vos troupes vers la victoire dans des batailles en 3D. Tout dépend de vous. Elvenar est un jeu en perpétuel développement, de nouvelles fonctionnalités sont ajoutées régulièrement au jeu en se basant sur les retours et les suggestions des communautés ! N'attendez plus pour venir découvrir notre univers !",
+    "image": "https://fr.wiki.elvenar.com/images/f/f5/Content-onyx-houses.0c8e6ced.png",
+    "prix": "50€"
+}
+}
+###
+GET http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+###
+GET http://localhost:1337/api/official-games/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+###
+PUT http://localhost:1337/api/official-games/1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+
+{
+    "data": {
+    "nom": "candy crush saga",
+    "description": "Candy Crush Saga est un jeu vidéo développé par King, disponible à l'origine comme une application Facebook et adapté pour les systèmes d'exploitation Android, iOS et Windows Phone. Il s'agit d'une variante du jeu sur navigateur web Candy Crush. Il reprend les principes du jeu concurrent Bejeweled, sorti en 2001 sous le nom initial de Diamond Mine2, et en partie le design de CandySwype, sorti en 20103.",
+    "image": "https://fr.wikipedia.org/wiki/Fichier:Candy_Crush_Saga_Logo.jpg",
+    "prix": "40€"
+}
+}
+###
+DELETE http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1MzE4LCJleHAiOjE3MDQzNjczMTh9.Pd10AzyjGGIXYOZ5H1gis-NiNIj5i9P8d9YTda0UfWA
+
+7a374ae074b0bcbc7547749c6094e0f13110587ee207e7972748a85e320855fce5a4a99ea0ab9ee885d0af9006300d0219be8c6220d7c7a19cb4a6e6bd309514d17a6c0806f7b88e38469b9e9b799a53aeb94302038b5802c75a66a6dbd5778d7decef742129332669ffe7addf7e4184acddfffb5dea722f6a7e80367d363b6f
